@@ -1,0 +1,5 @@
+cmake/
+build/
+libs/
+.cache/
+.DS_Store
