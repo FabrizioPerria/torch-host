@@ -8,6 +8,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs)
 set(CPM_DIR ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+set (JUCE_COPY_PLUGIN_AFTER_BUILD TRUE)
+
 file(
   DOWNLOAD
   https://github.com/cpm-cmake/CPM.cmake/releases/download/v0.38.3/CPM.cmake
@@ -41,6 +43,7 @@ if (MSVC)
 else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
+
 
 add_subdirectory(plugin)
 add_subdirectory(test)
