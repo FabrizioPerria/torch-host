@@ -1,16 +1,18 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(AudioPlugin VERSION 0.1.0)
+project(YourPluginName VERSION 0.1.0)
 
 juce_add_plugin(${PROJECT_NAME}
     COMPANY xx
-    IS_SYNTH FALSE
-    NEEDS_MIDI_INPUT FALSE
+    IS_SYNTH true
+    NEEDS_MIDI_INPUT true
+    COPY_PLUGIN_AFTER_BUILD true
     NEEDS_MIDI_OUTPUT FALSE
-    PLUGIN_MANUFACTURER_CODE XXXX
-    PLUGIN_CODE AUDI
-    FORMATS VST3 AU Standalone
-    PRODUCT_NAME "YourPluginName"
+    PLUGIN_MANUFACTURER_CODE FABP
+    PLUGIN_CODE BS-1
+    FORMATS AU VST3
+    PRODUCT_NAME ${PROJECT_NAME}
+    COMPANY_NAME "xx"
 )
 
 target_sources(${PROJECT_NAME}
@@ -21,7 +23,7 @@ target_sources(${PROJECT_NAME}
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
-        include/YourPluginName
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
