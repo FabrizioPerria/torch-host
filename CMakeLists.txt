@@ -4,9 +4,14 @@ project(YourPluginNameRoot)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_BUILD_TYPE Debug)
 
 set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs)
 set(CPM_DIR ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+set_property(GLOBAL PROPERTY USE_FOLDERS YES)
+set(JUCE_ENABLE_MODULE_SOURCE_GROUPS ON)
+set(JUCE_BUILD_EXTRAS  OFF)
+set(JUCE_BUILD_EXAMPLES OFF)
 
 file(
   DOWNLOAD
@@ -22,6 +27,13 @@ CPMAddPackage(
     GITHUB_REPOSITORY juce-framework/JUCE
     GIT_TAG develop
     SOURCE_DIR ${LIB_DIR}/juce
+)
+
+CPMAddPackage(
+    NAME TRACER
+    GITHUB_REPOSITORY fabrizioperria/tracer
+    GIT_TAG main
+    SOURCE_DIR ${LIB_DIR}/tracer
 )
 
 CPMAddPackage(
