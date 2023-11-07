@@ -1,5 +1,6 @@
 ﻿---
 BasedOnStyle: Microsoft
+BreakBeforeBraces: Custom
 IndentWidth: '4'
 IndentWrappedFunctionNames: 'true'
 NamespaceIndentation: All
@@ -8,12 +9,14 @@ SpaceAfterCStyleCast: 'true'
 SpaceAfterLogicalNot: 'false'
 SpaceAfterTemplateKeyword: 'false'
 SpaceBeforeAssignmentOperators: 'true'
-SpaceBeforeParens: Always
+SpaceBeforeParens: ControlStatements
 SpacesInAngles: 'false'
 SpacesInCStyleCastParentheses: 'true'
 SpacesInParentheses: 'false'
 SpacesInSquareBrackets: 'false'
 TabWidth: '4'
 UseTab: Always
+SeparateDefinitionBlocks: Always
+EmptyLineBeforeAccessModifier: LogicalBlock
 
 ...
