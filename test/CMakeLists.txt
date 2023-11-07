@@ -7,15 +7,15 @@ macro(ADD_PREFIX_TO_LIST input_list prefix output_list)
     endforeach()
 endmacro()
 
-project(YourPluginNameTest VERSION 0.1.0)
+project(YourPluginNameTest VERSION 0.1.0) #TODO: Change this to your test project name
 
-set(LIBS_TO_TEST "YourPluginName")
+set(LIBS_TO_TEST "YourPluginName") #TODO: Change this to your plugin name(must be same as the actuaal plugin's name)
 
 enable_testing()
 add_executable(${PROJECT_NAME})
 
-get_target_property(JUCE_HEADER YourPluginName JUCE_LIBRARY_CODE)
-get_target_property(JUCE_BINARY_DATA_FOLDER YourPluginName JUCE_BINARY_DATA_FOLDER)
+get_target_property(JUCE_HEADER YourPluginName JUCE_LIBRARY_CODE) #TODO: Change this to your plugin name(must be same as the actuaal plugin's name)
+get_target_property(JUCE_BINARY_DATA_FOLDER YourPluginName JUCE_BINARY_DATA_FOLDER) #TODO: Change this to your plugin name(must be same as the actuaal plugin's name)
 target_sources(${PROJECT_NAME}
     PRIVATE
     source/AudioProcessorTest.cpp
