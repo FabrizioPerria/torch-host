@@ -1,4 +1,4 @@
----
+﻿---
 AccessModifierOffset: -4
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: false
@@ -6,6 +6,7 @@ AlignConsecutiveDeclarations: false
 AlignEscapedNewlines: Left
 AlignOperands: Align
 AlignTrailingComments: Always
+AllowAllArgumentsOnNextLine: false
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortBlocksOnASingleLine: Never
 AllowShortCaseLabelsOnASingleLine: false
@@ -25,7 +26,7 @@ BreakBeforeTernaryOperators: true
 # BreakConstructorInitializersBeforeComma: false
 BreakConstructorInitializersBeforeComma: true
 BreakStringLiterals: false
-ColumnLimit: 120
+ColumnLimit: 140
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
@@ -39,9 +40,10 @@ IndentWrappedFunctionNames: true
 KeepEmptyLinesAtTheStartOfBlocks: false
 Language: Cpp
 MaxEmptyLinesToKeep: 1
-PenaltyBreakOpenParenthesis: 9
+PenaltyBreakAssignment: 999999
+PenaltyBreakOpenParenthesis: 999999
 PenaltyBreakTemplateDeclaration: 9999
-PenaltyBreakBeforeFirstCallParameter: 999
+PenaltyBreakBeforeFirstCallParameter: 99999
 PointerAlignment: Left
 ReflowComments: false
 SortIncludes: true
