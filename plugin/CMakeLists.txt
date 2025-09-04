@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(YourPluginName VERSION 0.1.0) # TODO: change this to your plugin name
+project(TorchHostApp VERSION 0.1.0)
 
 set(Torch_DIR "${LibTorch_SOURCE_DIR}/share/cmake/Torch")
 find_package(Torch REQUIRED)
@@ -9,7 +9,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 juce_add_plugin(
   ${PROJECT_NAME}
   COMPANY
-  xx # TODO: change this to your company name
+  fp
   IS_SYNTH
   true
   NEEDS_MIDI_INPUT
@@ -21,7 +21,7 @@ juce_add_plugin(
   PLUGIN_MANUFACTURER_CODE
   FABP
   PLUGIN_CODE
-  BS-1 # TODO: change this to your plugin code
+  HS-1
   FORMATS
   AU
   VST3
@@ -29,8 +29,7 @@ juce_add_plugin(
   PRODUCT_NAME
   ${PROJECT_NAME}
   COMPANY_NAME
-  "xx" # TODO: change this to your company name
-)
+  "fp")
 
 juce_add_binary_data(BinaryData SOURCES resources/volume.svg)
 
@@ -62,7 +61,7 @@ target_link_libraries(
 target_compile_definitions(
   ${PROJECT_NAME}
   PUBLIC JUCE_WEB_BROWSER=0 JUCE_CURL=0 JUCE_VST3_CAN_REPLACE_VST2=0
-         JUCE_SILENCE_XCODE_15_LINKER_WARNING=1)
+         JUCE_SILENCE_XCODE_15_LINKER_WARNING=1 JUCE_PLUGINHOST_VST3=1)
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_20)
 target_link_options(${PROJECT_NAME} PUBLIC
